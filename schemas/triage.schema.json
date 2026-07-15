@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/triage.schema.json",
+  "title": "Embedded log triage",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "classification",
+    "severity",
+    "components",
+    "evidence_lines",
+    "needs_deep_analysis",
+    "escalation_reason",
+    "missing_evidence",
+    "confidence"
+  ],
+  "properties": {
+    "classification": {
+      "enum": [
+        "known_pattern",
+        "possible_anomaly",
+        "insufficient_evidence",
+        "no_anomaly"
+      ]
+    },
+    "severity": {
+      "enum": ["critical", "high", "medium", "low", "none"]
+    },
+    "components": {
+      "type": "array",
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": {"type": "string", "maxLength": 64}
+    },
+    "evidence_lines": {
+      "type": "array",
+      "maxItems": 12,
+      "uniqueItems": true,
+      "items": {"type": "integer", "minimum": 1}
+    },
+    "needs_deep_analysis": {"type": "boolean"},
+    "escalation_reason": {
+      "enum": [
+        "critical_pattern",
+        "cross_component",
+        "low_confidence",
+        "unknown_signature",
+        "none"
+      ]
+    },
+    "missing_evidence": {
+      "type": "array",
+      "maxItems": 8,
+      "items": {"type": "string", "maxLength": 160}
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    }
+  }
+}

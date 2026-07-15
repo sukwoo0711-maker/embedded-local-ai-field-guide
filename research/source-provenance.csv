@@ -1,0 +1,32 @@
+id,url,published_at,observed_at,window_relation,role,inclusion_reason
+OLL-REL-032,https://github.com/ollama/ollama/releases/tag/v0.32.0,2026-07-11,2026-07-15,within,window_signal,corrects release status and identifies agent launch
+OLL-PR-17017,https://github.com/ollama/ollama/pull/17017,2026-07-10,2026-07-15,within,window_signal,primary implementation record
+OLL-GPU,https://docs.ollama.com/gpu,unknown,2026-07-15,not_date_bounded,technical_baseline,official RTX 3050 support and driver floor
+OLL-CTX,https://docs.ollama.com/context-length,unknown,2026-07-15,not_date_bounded,technical_baseline,official context and memory guidance
+OLL-FAQ,https://docs.ollama.com/faq,unknown,2026-07-15,not_date_bounded,technical_baseline,official concurrency and memory behavior
+OLL-STRUCT,https://docs.ollama.com/capabilities/structured-outputs,unknown,2026-07-15,not_date_bounded,technical_baseline,official structured-output API
+OLL-TOOLS,https://docs.ollama.com/capabilities/tool-calling,unknown,2026-07-15,not_date_bounded,technical_baseline,defines excluded tool capability
+QWEN-TAGS,https://ollama.com/library/qwen3.5/tags,unknown,2026-07-15,outside_or_unknown,technical_baseline,official artifact sizes rather than trend evidence
+OLL-CHAIN,https://www.reddit.com/r/ollama/comments/1uqxbe0/i_made_a_tool_that_chains_a_small_local_model/,unknown,2026-07-14,reported_within,community_signal,sequential model routing self-report
+OAI-HARNESS,https://openai.com/index/harness-engineering/,2026-02-11,2026-07-15,outside,architecture_baseline,repository-as-system-of-record operating pattern
+CODEX-29356,https://github.com/openai/codex/issues/29356,unknown,2026-07-14,reported_within,failure_signal,context continuity issue
+CODEX-28866,https://github.com/openai/codex/issues/28866,unknown,2026-07-14,reported_within,failure_signal,large local session resume issue
+GROUNDTRUTH,https://github.com/akahkhanna/groundtruth/tree/67238fa5717774791979b32245fe38a0456558e6,unknown,2026-07-14,reported_within,implementation_example,checks agent claims against Git state
+GIT-TEMP,https://github.com/sebmellen/git-temp/tree/fb0b47c48cb00bab117eeff83998c6afbcdcdd2b,unknown,2026-07-14,reported_within,implementation_example,separates scratch state from main Git status
+CODEALMANAC,https://github.com/AlmanacCode/codealmanac/tree/4dc6949cfaec98130facea45bc2e7d39dba138d5,unknown,2026-07-14,reported_within,implementation_example,local repository knowledge workflow
+ENOLA,https://github.com/enola-labs/enola/tree/0182470079be1e5993b3e87d84fe3c81df6fd9fa,unknown,2026-07-14,reported_within,implementation_example,deterministic architecture graph
+PROMPTLINGS,https://github.com/dfinson/promptlings/tree/22fcbea0f4ed3fba4722fcbc99e6aa8d8510b05a,unknown,2026-07-14,reported_within,implementation_example,portable guidance example
+SESSION-RECOVER,https://github.com/softcane/cc-session-recover/tree/9244d9a8f7763514ea92cdb7a8c32f1a37269c33,unknown,2026-07-14,reported_within,implementation_example,session recovery workflow
+TASK-WEDDING,https://github.com/TrevorHumble/TaskMasterWedding/tree/c90384dc1ad743661ce30383acbd9573e93e3ec0,unknown,2026-07-14,reported_within,implementation_example,shared task state example
+HANDOFFKIT,https://github.com/dyngai/handoffkit/tree/cff7bcae9de5787bfaf8d322d2b7b2473bbabed9,unknown,2026-07-14,reported_within,implementation_example,coding-agent handoff rules
+MULTI-AGENT-THREAD,https://www.reddit.com/r/AI_Agents/comments/1uv8u5g/working_on_the_same_project_with_different_ai/,unknown,2026-07-14,reported_within,community_signal,shared-workspace concern
+ZEPHYR-TWISTER,https://docs.zephyrproject.org/latest/develop/test/twister.html,unknown,2026-07-15,not_date_bounded,technical_baseline,official embedded test metadata system
+R3,https://github.com/hyperlogue/r3/tree/97b7530593762f3466b40b566aeada8dd8e481bb,unknown,2026-07-14,reported_within,implementation_example,bounded local review example
+HALO,https://github.com/context-labs/halo/tree/17aadca5feb681c59b4da1e9fea5455f58c31b6e,unknown,2026-07-14,reported_within,implementation_example,narrow local trace debugging
+LOQI,https://github.com/danterolle/loqi/tree/5631152ed22dab39f7de9f1aed93dc88fbc616e9,unknown,2026-07-14,reported_within,implementation_example,local translation workflow
+SELORA,https://github.com/SeloraHomes/ha-selora-ai/tree/69fa589b8fc7670567c33cee4c7c358570a65ec0,unknown,2026-07-14,reported_within,implementation_example,local home automation workflow
+PII-GUI,https://github.com/sophia486/pii-gui/tree/5b0804829c19cb0e1088a8c739582e25f07f1ac1,unknown,2026-07-14,reported_within,implementation_example,local de-identification workflow
+USEFUL-AGENTS,https://www.reddit.com/r/AI_Agents/comments/1uosa8b/whats_the_most_useful_ai_agent_youve_actually/,unknown,2026-07-14,reported_within,community_signal,practitioner use-case discussion
+PERSONAL-AGENTS,https://www.reddit.com/r/AI_Agents/comments/1uuv9dm/how_have_you_been_using_and_deploying_ai_agents/,unknown,2026-07-14,reported_within,community_signal,personal workflow discussion
+DISCOMFORT,https://www.reddit.com/r/AI_Agents/comments/1uv46ud/for_people_running_ai_automations_what_actions/,unknown,2026-07-14,reported_within,community_signal,side-effect delegation concern
+GITLOST,https://noma.security/blog/gitlost-how-we-tricked-githubs-ai-agent-into-leaking-private-repos/,unknown,2026-07-14,reported_within,threat_context,untrusted-content and repository-permission case study

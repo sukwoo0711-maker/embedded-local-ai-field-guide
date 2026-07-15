@@ -1,0 +1,32 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-tests:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install without runtime dependencies
+        run: python -m pip install --no-deps -e .
+      - name: Run offline unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Compile Python sources
+        run: python -m compileall -q src tests scripts/probe_ollama.py
+      - name: Smoke-test a non-editable install
+        run: python -m pip install --no-deps --target .wheel-smoke .
+      - name: Load packaged resources
+        run: python -c "import sys; sys.path.insert(0, '.wheel-smoke'); from embedded_log_analyzer.schema import load_schema; assert load_schema('triage')['type'] == 'object'"

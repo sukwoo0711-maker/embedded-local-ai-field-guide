@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/analysis.schema.json",
+  "title": "Embedded log analysis",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "verdict",
+    "severity",
+    "components",
+    "evidence_lines",
+    "observed_facts",
+    "hypotheses",
+    "missing_evidence",
+    "next_read_only_checks",
+    "confidence",
+    "needs_human_review",
+    "limitations"
+  ],
+  "properties": {
+    "verdict": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 320
+    },
+    "severity": {
+      "enum": ["critical", "high", "medium", "low", "none"]
+    },
+    "components": {
+      "type": "array",
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {"type": "string", "maxLength": 64}
+    },
+    "evidence_lines": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["line_no", "quote"],
+        "properties": {
+          "line_no": {"type": "integer", "minimum": 1},
+          "quote": {"type": "string", "minLength": 1, "maxLength": 240}
+        }
+      }
+    },
+    "observed_facts": {
+      "type": "array",
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["fact", "line_numbers"],
+        "properties": {
+          "fact": {"type": "string", "minLength": 1, "maxLength": 240},
+          "line_numbers": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 8,
+            "uniqueItems": true,
+            "items": {"type": "integer", "minimum": 1}
+          }
+        }
+      }
+    },
+    "hypotheses": {
+      "type": "array",
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "statement",
+          "supporting_lines",
+          "contradicting_lines",
+          "confidence"
+        ],
+        "properties": {
+          "statement": {"type": "string", "minLength": 1, "maxLength": 240},
+          "supporting_lines": {
+            "type": "array",
+            "maxItems": 8,
+            "uniqueItems": true,
+            "items": {"type": "integer", "minimum": 1}
+          },
+          "contradicting_lines": {
+            "type": "array",
+            "maxItems": 8,
+            "uniqueItems": true,
+            "items": {"type": "integer", "minimum": 1}
+          },
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+        }
+      }
+    },
+    "missing_evidence": {
+      "type": "array",
+      "maxItems": 12,
+      "items": {"type": "string", "maxLength": 200}
+    },
+    "next_read_only_checks": {
+      "type": "array",
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["check_id", "rationale"],
+        "properties": {
+          "check_id": {
+            "enum": [
+              "inspect_prior_boot",
+              "compare_known_good",
+              "inspect_reset_register_decode",
+              "inspect_build_metadata",
+              "rerun_read_only_capture",
+              "review_source_at_symbol",
+              "none"
+            ]
+          },
+          "rationale": {"type": "string", "minLength": 1, "maxLength": 200}
+        }
+      }
+    },
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "needs_human_review": {"type": "boolean"},
+    "limitations": {
+      "type": "array",
+      "maxItems": 8,
+      "items": {"type": "string", "maxLength": 200}
+    }
+  }
+}

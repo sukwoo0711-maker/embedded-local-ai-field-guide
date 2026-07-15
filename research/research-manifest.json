@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "research_window": {
+    "start": "2026-06-14",
+    "end": "2026-07-14",
+    "timezone": "Asia/Seoul"
+  },
+  "primary_source_recheck": "2026-07-15",
+  "collector": {
+    "name": "last30days",
+    "version": "3.11.1",
+    "topic_slug": "ollama-agent-local-embedded-log-analysis-git-state-handoff-and-narrow-personal-ai-automations"
+  },
+  "private_raw_artifact": {
+    "published": false,
+    "reason": "Contains long third-party transcripts, noisy fallback items, and untrusted text.",
+    "sha256": "8b7ee398f28f9b9d71709b65522dd1e44dfcd13fe0ef9e87ba4b59b4d6ed8847",
+    "size_bytes": 84400
+  },
+  "raw_item_counts": {
+    "reddit": 20,
+    "youtube": 10,
+    "tiktok": 15,
+    "instagram": 7,
+    "hacker_news": 26,
+    "github": 1,
+    "digg_clusters": 28,
+    "total": 107
+  },
+  "coverage_gaps": {
+    "x": "not collected",
+    "arxiv": 0,
+    "techmeme": 0
+  },
+  "publication_policy": {
+    "raw_text": "excluded",
+    "selected_source_metadata": "research/source-provenance.csv",
+    "graded_synthesis": "research/evidence-register.md"
+  }
+}

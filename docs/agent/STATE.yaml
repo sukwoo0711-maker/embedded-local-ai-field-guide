@@ -1,0 +1,102 @@
+schema_version: "1.0"
+document_kind: agent_runtime_state
+lifecycle: uninitialized
+updated_at_utc: null
+updated_by:
+  kind: null
+  identifier: null
+
+active_task:
+  id: null
+  objective: null
+  branch: null
+  handoff_ref: null
+  status: null
+
+repository:
+  remote: null
+  source_commit: null
+  source_commit_dirty: null
+  worktree_digest: null
+  metadata_descendants_allowed: true
+  metadata_path_allowlist:
+    - AGENTS.md
+    - docs/agent/
+  submodules_digest: null
+
+baseline:
+  known_good_id: null
+  comparison_result: null
+
+target:
+  board:
+    family: null
+    revision: null
+    mcu: null
+    asset_alias: null
+  probe:
+    type: null
+    firmware_version: null
+    asset_alias: null
+  fixture:
+    id: null
+    revision: null
+
+toolchain:
+  kind: null
+  version: null
+  digest: null
+  build_wrapper: null
+  build_configuration: null
+
+firmware:
+  source_commit: null
+  artifact_path: null
+  artifact_sha256: null
+  size_bytes: null
+  embedded_build_id: null
+  observed_on_dut:
+    method: null
+    value: null
+    evidence_ref: null
+
+latest_validation:
+  uart:
+    artifact_ref: null
+    captured_at_utc: null
+    time_range_utc: null
+    result: null
+  hil:
+    fixture_id: null
+    test_suite: null
+    result: null
+    passed: null
+    failed: null
+    report_artifact_ref: null
+
+evidence_refs: []
+decision_refs: []
+rejected_approaches: []
+blockers: []
+
+next_action:
+  wrapper_id: null
+  parameters: {}
+  preconditions: []
+  expected_evidence: []
+  mutates_external_state: false
+
+approval:
+  carry_over: false
+  status: not_required
+  action: null
+  target: null
+  firmware_sha256: null
+  approval_ref: null
+  expires_at_utc: null
+
+resume_gate:
+  last_checked_at_utc: null
+  classification: CANNOT_RESUME
+  reasons:
+    - State is not initialized.

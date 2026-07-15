@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+title: Embedded Local AI Field Guide
+message: If you use this reference design, cite this repository and the primary sources in the evidence register.
+type: software
+authors:
+  - family-names: sukwoo0711-maker
+version: 0.1.0
+license: MIT
+repository-code: https://github.com/sukwoo0711-maker/embedded-local-ai-field-guide
+abstract: Evidence-led reference stack for bounded local embedded-log analysis, Git-based AI handoff, and narrow personal automation on 8GB VRAM.

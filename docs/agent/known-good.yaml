@@ -1,0 +1,38 @@
+schema_version: "1.0"
+document_kind: known_good_registry
+baselines: []
+
+# Example only. Do not mark a baseline approved without human review.
+#
+# - id: kg-board-a-r2-release-001
+#   status: approved
+#   approved_at_utc: "2026-07-15T00:00:00Z"
+#   source:
+#     commit: "<40 lowercase hex>"
+#     dirty: false
+#   target:
+#     board_family: board-a
+#     board_revision: r2
+#     mcu: MCU_NAME
+#     probe_type: PROBE_NAME
+#     probe_firmware: "1.2.3"
+#     fixture_id: fixture-a
+#     fixture_revision: r1
+#   toolchain:
+#     kind: container
+#     version: "x.y.z"
+#     digest: "sha256:<64 lowercase hex>"
+#   build:
+#     wrapper_id: build_release
+#     configuration: release
+#   firmware:
+#     path: build/firmware.bin
+#     sha256: "sha256:<64 lowercase hex>"
+#     size_bytes: 0
+#     embedded_build_id: null
+#   validation:
+#     uart_artifact_ref: artifact:uart-boot-001
+#     hil_report_artifact_ref: artifact:hil-001
+#     required_tests_passed: true
+#   approval:
+#     decision_ref: D-0000

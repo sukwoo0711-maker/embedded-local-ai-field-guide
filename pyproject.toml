@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "embedded-local-ai-field-guide"
+version = "0.1.0"
+description = "Bounded Ollama-based embedded log analysis reference stack for 8GB VRAM"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "sukwoo0711-maker"}]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Software Development :: Embedded Systems",
+]
+dependencies = []
+
+[project.scripts]
+embedded-log-analyzer = "embedded_log_analyzer.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+embedded_log_analyzer = [
+  "resources/prompts/*.txt",
+  "resources/schemas/*.json",
+]

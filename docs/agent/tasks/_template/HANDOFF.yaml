@@ -1,0 +1,65 @@
+schema_version: "1.0"
+document_kind: task_handoff
+
+task:
+  id: TASK-0000
+  objective: null
+  status: paused
+  created_at_utc: null
+  source_role: null
+  destination_role: null
+
+scope:
+  included: []
+  excluded: []
+
+starting_point:
+  source_commit: null
+  branch: null
+  worktree_digest: null
+  known_good_id: null
+
+hardware_context:
+  board_family: null
+  board_revision: null
+  board_asset_alias: null
+  probe_type: null
+  probe_firmware: null
+  fixture_id: null
+  fixture_revision: null
+
+toolchain_context:
+  version: null
+  digest: null
+  build_configuration: null
+
+firmware_context:
+  artifact_ref: null
+  sha256: null
+  observed_on_dut_ref: null
+
+observed_facts: []
+hypotheses: []
+attempts: []
+rejected_approaches: []
+remaining_risks: []
+decision_refs: []
+artifact_refs: []
+
+next_action:
+  wrapper_id: null
+  parameters: {}
+  preconditions: []
+  expected_evidence: []
+  mutates_external_state: false
+
+resume_requirements:
+  minimum_classification: MATCH
+  required_artifacts: []
+  require_firmware_identity_on_dut: true
+
+human_approval:
+  carry_over: false
+  pending_actions: []
+
+acceptance_criteria: []

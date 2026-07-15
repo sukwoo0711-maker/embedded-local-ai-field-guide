@@ -1,0 +1,8 @@
+[00:00:00.000] Booting synthetic-controller 0.1
+[00:00:00.012] reset reason: power-on
+[00:00:00.020] watchdog initialized interval=2000ms
+[00:00:00.035] scheduler started
+[00:00:01.000] sensor_task heartbeat=1
+[00:00:02.000] sensor_task heartbeat=2
+[00:00:03.000] sensor_task heartbeat=3
+[00:00:04.000] shutdown requested by synthetic test harness

@@ -1,0 +1,32 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.wheel-smoke/
+.wheelhouse/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Runtime outputs and real device data
+artifacts/
+captures/
+*.log
+!samples/*.synthetic.log
+
+# Machine-specific mappings and secrets
+.env
+.env.*
+!.env.example
+*.local.*
+config/*.local.*
+docs/agent/local/
+
+# Editors and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

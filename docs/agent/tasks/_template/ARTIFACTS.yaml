@@ -1,0 +1,27 @@
+schema_version: "1.0"
+document_kind: artifact_manifest
+artifacts: []
+
+# Entry example:
+#
+# - id: uart-001
+#   type: uart_raw
+#   media_type: application/octet-stream
+#   uri: artifact://sha256/<64 lowercase hex>
+#   sha256: "sha256:<64 lowercase hex>"
+#   size_bytes: 0
+#   captured_at_utc: "2026-07-15T00:00:00Z"
+#   capture_tool:
+#     name: uart_capture
+#     version: "1.0.0"
+#   source:
+#     board_asset_alias: dut-a
+#     interface: uart0
+#     baud: 115200
+#   immutable: true
+#   derived_from: null
+#   transform:
+#     name: null
+#     version: null
+#   public_safe: false
+#   sanitized_excerpt_ref: null
