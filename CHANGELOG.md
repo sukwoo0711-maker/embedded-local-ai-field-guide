@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- Add an append-only JSONL project-memory ledger schema, validator, synthetic fixture,
+  and negative tests for forward references and unsupported verified claims.
+- Document compiler-native indexing, bounded slow-local/Gemini nightly escalation,
+  and the auto-grill decision that keeps these additions in the existing field guide.
+
 ## 0.1.0 — 2026-07-15
 
 - Publish an evidence-graded field guide for local embedded-log analysis,

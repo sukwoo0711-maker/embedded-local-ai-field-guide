@@ -10,6 +10,7 @@ from typing import Any, Sequence
 
 from . import __version__
 from .ollama_client import OllamaClient, OllamaError
+from .memory_ledger import LedgerValidationError, validate_ledger
 from .pipeline import PipelineConfig, run_pipeline
 from .preprocess import InputChangedError, InputTooLargeError
 
@@ -223,6 +224,12 @@ def build_parser() -> argparse.ArgumentParser:
         "--analysis-model",
         default="embedded-log-analysis:9b",
     )
+
+    ledger = subparsers.add_parser(
+        "validate-ledger",
+        help="Validate an append-only JSONL project-memory ledger",
+    )
+    ledger.add_argument("input", type=Path)
     return parser
 
 
@@ -295,6 +302,15 @@ def _run_doctor(args: argparse.Namespace) -> int:
 def main(argv: Sequence[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
+    if args.command == "validate-ledger":
+        try:
+            sys.stdout.write(_json_text(validate_ledger(args.input)))
+            return 0
+        except FileNotFoundError:
+            parser.error(f"Input not found: {args.input}")
+        except LedgerValidationError as exc:
+            sys.stderr.write(f"invalid_ledger: {exc}\n")
+            return 5
     if args.command == "doctor":
         return _run_doctor(args)
 

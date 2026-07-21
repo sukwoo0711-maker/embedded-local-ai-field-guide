@@ -30,3 +30,11 @@ USEFUL-AGENTS,https://www.reddit.com/r/AI_Agents/comments/1uosa8b/whats_the_most
 PERSONAL-AGENTS,https://www.reddit.com/r/AI_Agents/comments/1uuv9dm/how_have_you_been_using_and_deploying_ai_agents/,unknown,2026-07-14,reported_within,community_signal,personal workflow discussion
 DISCOMFORT,https://www.reddit.com/r/AI_Agents/comments/1uv46ud/for_people_running_ai_automations_what_actions/,unknown,2026-07-14,reported_within,community_signal,side-effect delegation concern
 GITLOST,https://noma.security/blog/gitlost-how-we-tricked-githubs-ai-agent-into-leaking-private-repos/,unknown,2026-07-14,reported_within,threat_context,untrusted-content and repository-permission case study
+PROJECTMEM,https://arxiv.org/abs/2606.12329,2026-06-10,2026-07-22,within,supplemental_research,append-only project-memory implementation and self-study
+TAKTILE-WIKI,https://engineering.taktile.com/blog/llm-wiki-agent-memory/,2026-07-13,2026-07-22,within,supplemental_research,persistent wiki with source validation and stale lint
+CLANG-CDB,https://clang.llvm.org/docs/JSONCompilationDatabase.html,unknown,2026-07-22,not_date_bounded,technical_baseline,official compilation database contract
+GCC-DEPS,https://gcc.gnu.org/onlinedocs/gcc/Preprocessor-Options.html,unknown,2026-07-22,not_date_bounded,technical_baseline,official dependency artifact semantics
+GCC-MAP,https://gcc.gnu.org/onlinedocs/gcc/Link-Options.html,unknown,2026-07-22,not_date_bounded,technical_baseline,official linker map invocation
+GEMINI-QUOTA,https://docs.cloud.google.com/gemini/docs/quotas,2026-07-20,2026-07-22,within,technical_baseline,official agent and CLI quota semantics
+GEMINI-PRIVACY,https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance,2026-07-17,2026-07-22,within,technical_baseline,official enterprise data handling and controls
+COLIBRI,https://github.com/JustVugg/colibri,unknown,2026-07-22,reported_within,implementation_example,disk-streamed MoE inference experiment

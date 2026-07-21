@@ -175,6 +175,10 @@ resume gate는 `MATCH`, `MINOR_DRIFT`, `MATERIAL_DRIFT`, `CANNOT_RESUME` 네 상
 - [Git 상태 인수인계](docs/04-git-state-handoff.md)
 - [평가 계획](docs/07-evaluation.md)
 - [RTX 3050 적용 결정표](docs/08-deployment-decision.md)
+- [Wiki, event ledger, handoff](docs/09-project-memory-ledger.md)
+- [Compiler-native index](docs/10-compiler-native-index.md)
+- [제한된 야간 second-brain pipeline](docs/11-nightly-second-brain.md)
+- [Second-brain auto-grill 결정 로그](docs/12-auto-grill-decision-log.md)
 - [선별 근거 register](research/evidence-register.md)
 - [단일-host 9B smoke test와 qualitative failure](research/local-smoke-2026-07-15.md)
 
@@ -192,6 +196,19 @@ tests/        offline tests with no GPU or Ollama requirement
 docs/         research, architecture, safety, and handoff guidance
 research/     curated evidence register, not the raw social dump
 ```
+
+## Project-memory ledger
+
+공개 가능한 합성 event ledger와 zero-dependency validator가 포함되어 있습니다. 과거 행은
+수정하지 않으며 verified event에는 artifact hash와 locator가 필요합니다.
+
+```powershell
+python -m embedded_log_analyzer validate-ledger `
+  .\samples\project-memory.synthetic.jsonl
+```
+
+이 ledger는 `agent-token-ledger`의 token/cost trace와 다릅니다. 여기서는 관찰, 이슈, 시도,
+결과, 결정의 project memory를 기록합니다.
 
 ## 검증
 

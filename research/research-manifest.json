@@ -6,6 +6,11 @@
     "timezone": "Asia/Seoul"
   },
   "primary_source_recheck": "2026-07-15",
+  "supplemental_recheck": {
+    "date": "2026-07-22",
+    "scope": "project memory, compiler-native indexes, slow local inference, and bounded Gemini escalation",
+    "selected_sources": 8
+  },
   "collector": {
     "name": "last30days",
     "version": "3.11.1",

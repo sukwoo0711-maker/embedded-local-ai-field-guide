@@ -2,6 +2,7 @@
 
 Snapshot window: 2026-06-14 to 2026-07-14
 Primary-source recheck: 2026-07-15
+Second-brain supplement recheck: 2026-07-22
 
 이 register는 원 조사에서 실제 설계 판단에 사용한 출처만 선별합니다. 원본 소셜 dump 전체는 포함하지 않습니다. 기간 내 신호와 기간 밖 기술 baseline의 구분, 관찰일, 알려진 게시일은 [source provenance](source-provenance.csv)에 기록했습니다. 수집 범위와 비공개 raw의 hash는 [research manifest](research-manifest.json)에 있습니다.
 
@@ -67,6 +68,19 @@ Primary-source recheck: 2026-07-15
 | ID | Source | Grade | 뒷받침하는 내용 | 한계 |
 |---|---|---:|---|---|
 | GITLOST | [GitLost case study](https://noma.security/blog/gitlost-how-we-tricked-githubs-ai-agent-into-leaking-private-repos/) | C | agent가 untrusted content와 repository 권한을 함께 가질 때의 위험 | Ollama 사건이 아니며 일반 threat 사례로만 사용 |
+
+## 2026-07-22 second-brain supplement
+
+| ID | Source | Grade | 뒷받침하는 내용 | 한계 |
+|---|---|---:|---|---|
+| PROJECTMEM | [PROJECTMEM paper](https://arxiv.org/abs/2606.12329) | C | append-only typed event log와 deterministic projection 구현 | 10 projects/207 events의 저자 self-study; 일반 효익 미입증 |
+| TAKTILE-WIKI | [Taktile LLM Wiki](https://engineering.taktile.com/blog/llm-wiki-agent-memory/) | C | persistent wiki, source validation, stale/contradiction lint 사례 | 단일 조직 engineering report |
+| CLANG-CDB | [Clang compilation database](https://clang.llvm.org/docs/JSONCompilationDatabase.html) | A | translation unit별 실제 compile arguments와 multi-configuration 표현 | runtime control/data flow는 제공하지 않음 |
+| GCC-DEPS | [GCC dependency generation](https://gcc.gnu.org/onlinedocs/gcc/Preprocessor-Options.html) | A | `-MD`/`-MMD`/`-MF` dependency artifact semantics | vendor compiler마다 option이 다름 |
+| GCC-MAP | [GCC linker options](https://gcc.gnu.org/onlinedocs/gcc/Link-Options.html) | A | GNU linker map 전달 방식 | map 형식과 의미는 linker별 상이 |
+| GEMINI-QUOTA | [Gemini quota documentation](https://docs.cloud.google.com/gemini/docs/quotas) | A | Enterprise 2,000 requests/day, prompt 하나가 여러 model request 가능 | 조직별 계약/변경 가능; 비용표 아님 |
+| GEMINI-PRIVACY | [Gemini Code Assist security and privacy](https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance) | A | Customer Data, stateless processing, optional logging, telemetry와 security controls | 실제 조직 설정은 별도 감사 필요 |
+| COLIBRI | [Colibri repository](https://github.com/JustVugg/colibri) | B | disk-streamed MoE expert engine의 공개 구현 | 초기 구현, 특정 model/format, target PC 실측 없음 |
 
 ## 낮은 가중치 또는 배제한 근거
 
