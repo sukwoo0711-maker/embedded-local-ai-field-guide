@@ -1,4 +1,4 @@
-# RTX 3050 8GB 적용 결정표
+# 8GB VRAM 적용 결정표 (이식 대상: 회사 PC GeForce RTX 3070급 8GB · RTX 3050 8GB 테스트벤치 검증)
 
 이 문서는 “실행 가능한가”와 “업무에 쓸 가치가 있는가”를 분리합니다.
 
@@ -15,10 +15,10 @@
 ## 왜 9B는 기본 interactive 경로가 아닌가
 
 8GB에 model이 적재될 가능성과 응답 시간이 실용적인지는 다른 질문입니다.
-대상 장비가 아닌 RTX 3070 Ti 8GB의 단 한 번의 smoke test에서도 9B direct
-analysis는 load를 포함해 97.776초가 걸렸습니다. 이 관찰로 RTX 3050의
-시간을 계산할 수는 없지만, 3050에서 interactive SLA를 가정할 근거도
-없습니다.
+이식 대상(회사 PC ~RTX 3070급 8GB)도 RTX 3050 테스트벤치도 아닌 RTX 3070 Ti
+8GB에서의 단 한 번의 smoke test에서도 9B direct analysis는 load를 포함해
+97.776초가 걸렸습니다. 이 관찰로 대상 PC나 RTX 3050의 시간을 계산할 수는
+없고, 어느 8GB 장비에서도 interactive SLA를 가정할 근거는 없습니다.
 
 따라서 기본 운영은:
 
@@ -70,7 +70,7 @@ energy는 오히려 늘 수 있습니다. 이 저장소가 절감률을 주장�
 ### 2단계 — 9B conditional
 
 - 4B escalation rate와 direct-9B baseline 비교
-- 3050에서 load/prompt/eval duration과 `ollama ps` 기록
+- 이식 대상 PC(회사 ~RTX 3070급 8GB)와 테스트벤치에서 load/prompt/eval duration과 `ollama ps` 기록
 - background SLA 안에서만 유지
 - 실제 효익이 없으면 detector+4B로 축소
 

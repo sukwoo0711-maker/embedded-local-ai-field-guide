@@ -1,4 +1,4 @@
-# RTX 3050 8GB 하드웨어 적합성
+# 8GB VRAM 하드웨어 적합성 (이식 대상: 회사 PC GeForce RTX 3070급 8GB · RTX 3050 8GB 테스트벤치 검증)
 
 ## 확인된 사실
 
@@ -76,7 +76,7 @@ Ollama 공식 문서는:
 
 ## 장비별 acceptance 측정
 
-각 RTX 3050 장비에서 최소 다음을 기록해야 합니다.
+각 8GB 장비(이식 대상 회사 PC ~RTX 3070급 포함)에서 최소 다음을 기록해야 합니다.
 
 1. GPU model, VRAM, driver, compute capability
 2. Ollama version과 model digest

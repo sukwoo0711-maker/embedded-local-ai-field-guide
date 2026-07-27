@@ -1,10 +1,11 @@
 # Embedded Local AI Field Guide
 
-RTX 3050 8GB와 RAM 64GB 환경에서 검토한 로컬 임베디드 로그 분석, Git 기반 AI 인수인계, 좁고 반복적인 개인 자동화의 근거 중심 가이드입니다.
+8GB VRAM · 64GB RAM 클래스 로컬 환경을 대상으로 한 임베디드 로그 분석, Git 기반 AI 인수인계, 좁고 반복적인 개인 자동화의 근거 중심 가이드입니다.
 
 > Research snapshot: 2026-06-14 to 2026-07-14
 > Primary-source verification: 2026-07-15
-> Target profile: GeForce RTX 3050 8GB, 64GB system RAM, Windows
+> Deployment target: 8GB VRAM / 64GB RAM class (company PC, GeForce RTX 3070-class), Windows
+> Validated on: RTX 3050 8GB testbench; RTX 3070 Ti 8GB used as a same-VRAM memory-fit proxy. Re-measure on the target PC.
 > Status: reference design and proof of concept, not a production benchmark
 
 English abstract: this repository separates verified facts, observations, inferences, and recommendations for a bounded local-AI workflow. The included implementation treats model output as advisory, cites only supplied log lines, exposes no tools, and has no execution path for hardware-changing actions.
