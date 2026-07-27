@@ -20,6 +20,7 @@ English abstract: this repository separates verified facts, observations, infere
 | Qwen3.5 4B Q4 | 8GB에서 가장 여유 있는 후보 | 1차 분류 |
 | Qwen3.5 9B Q4 | 작은 컨텍스트와 단일 적재 조건에서 평가 가능 | 필요한 경우에만 2차 분석 |
 | 9B Q8, 27B Q4 이상 | 모델 파일만 8GB를 초과 | 기본 범위에서 제외 |
+| Qwen3.6 (35B-A3B MoE, ~22.3GB) | 최신 Qwen이나 8GB 온-GPU엔 부적합(파일이 8GB의 ~2.8배) | 온-GPU는 Qwen3.5 4B/9B 유지; 3.6은 64GB RAM offload 실험에서만, 성능 미측정 |
 | Ollama 네이티브 agent | v0.32.0 정식 릴리스에 포함됐지만 호스트 도구 권한이 큼 | 핵심 경로에서 제외하고 `/api/chat`만 사용 |
 | 여러 AI의 인수인계 | Git과 검증 가능한 상태 파일 패턴이 반복 관찰됨 | 채팅은 비권위 자료, Git 상태와 artifact hash가 기준 |
 | Personal AI | 표본에서 좁고 반복적인 업무가 두드러짐 | 요약·분류·초안까지만 자동화, 외부 효과는 사람 승인 |

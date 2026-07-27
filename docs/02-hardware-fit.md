@@ -12,8 +12,11 @@
 | `qwen3.5:9b-q4_K_M` | 6.6GB | 작은 context, single load 조건에서 평가 |
 | `qwen3.5:9b-q8_0` | 11GB | 완전 GPU 적재 후보에서 제외 |
 | `qwen3.5:27b-q4_K_M` | 17GB | 완전 GPU 적재 후보에서 제외 |
+| `qwen3.6:35b-a3b-q4_K_M` | ~22.3GB | 온-GPU 제외(8GB의 약 2.8배). 아래 note 참조 |
 
 위 크기는 model artifact 크기입니다. runtime buffer, KV cache, vision projector, driver overhead, 다른 프로세스의 VRAM을 포함하지 않습니다.
+
+> **Qwen3.6 확인 (2026-07-27, Ollama registry manifest 관측):** 공식 라이브러리의 Qwen3.6은 `qwen3.6:35b-a3b-q4_K_M`(= `latest`) 하나이며 model layer는 약 22.3GB(23,938,321,664 bytes)다. 소형 dense 변형(4b·8b·9b 등)은 registry에 존재하지 않는다(모두 404). 따라서 Qwen3.5는 더 이상 최신 세대가 아니지만, **8GB VRAM 온-GPU 대상에서는 Qwen3.5 4B/9B가 여전히 유일하게 적합한 선택**이다(2026-07-27 이 3070 Ti 8GB 테스트벤치에 `qwen3.5:9b` 6.6GB Q4가 그대로 적재돼 있음을 확인). 35B-A3B는 active parameter가 3B라 64GB system RAM에 expert를 offload하면 이론상 구동은 가능하나, 8GB 환경에서의 tokens/s·latency는 **미측정(UNVERIFIED)**이다 — 쓰기 전 `scripts/probe_ollama.py`로 실제 processor split과 latency를 측정할 것.
 
 ## Context의 모순처럼 보이는 권고
 
